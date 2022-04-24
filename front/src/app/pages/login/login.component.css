@@ -1,0 +1,14 @@
+.shape {
+        width: 0;
+        height: 0;
+        border-bottom: 100% solid red;
+        border-left: 100 solid transparent;
+}
+nz-form-item{
+        width: 200px;
+}
+
+.backg{
+        background-image: url(../../../assets/Untitled.png);
+        height:  100%;
+}

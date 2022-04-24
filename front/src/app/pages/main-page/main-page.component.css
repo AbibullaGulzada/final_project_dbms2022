@@ -1,0 +1,43 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    max-height: 116px;
+    max-width: 532px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 8px 16px;
+    width: 400;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.nav {
+    color: white;
+}
+
+.nav a {
+    color: white;
+}
+
+::ng-deep .ant-menu-item-selected,
+.ant-menu-item-selected>a,
+.ant-menu-item-selected>a:hover {
+    color: #660066;
+    border-bottom: 2px solid #660066;
+}
+
+::ng-deep .ant-menu-item-active,
+.ant-menu-item:hover,
+.ant-menu-submenu-active,
+.ant-menu-submenu-title:hover,
+.ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open {
+    color: #660066;
+}

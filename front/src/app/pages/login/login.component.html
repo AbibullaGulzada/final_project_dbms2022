@@ -1,0 +1,48 @@
+<div nz-row class="backg" [ngStyle]="{backgroundImage:'url(../../../assets/Untitled.png)'}">
+    <div nz-col nzSpan="20">
+        <div nz-row nzJustify="center" style="margin-top: 150px;">
+            <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+                <div style="display: flex;">
+                    <img src="https://maxcdn.icons8.com/Share/icon/nolan/science/open_book1600.png" style="width: 60px; height: 60px;" alt="">
+                    <div style="padding-top:10px ;">
+                        <h4 style="color: #9966ff;">EMPIRE</h4>
+                        <h4>BOOKSTORE</h4>
+                    </div>
+                </div>
+                <h2 style="margin-top: 30px;">{{selectedMode == "login"? "LOGIN" : "REGISTER"}}</h2>
+                <nz-form-item *ngIf="selectedMode !='login'">
+                    <nz-form-control nzErrorTip="Please input your uphone!">
+                        <nz-input-group nzCompact>
+                            <nz-select formControlName="mobilePrefix" style="width:30%">
+                                <nz-option [nzLabel]="'+8'" [nzValue]="8"></nz-option>
+                                <nz-option [nzLabel]="'+7'" [nzValue]="7"></nz-option>
+                            </nz-select>
+                            <input type="text" nz-input formControlName="mobileNumber" style="width:70%" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your username!">
+                        <nz-input-group nzCompact>
+                            <input type="text" nz-input formControlName="userName" placeholder="Username" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input your Password!">
+                        <nz-input-group nzCompact>
+                            <input type="password" nz-input formControlName="password" placeholder="Password" />
+                        </nz-input-group>
+                    </nz-form-control>
+                </nz-form-item>
+                <div nz-row class="login-form-margin">
+                    <div nz-col style="margin-bottom: 10px;">
+                        <a class="login-form-forgot">Forgot password</a>
+                    </div>
+                </div>
+                <button nz-button class="login-form-button login-form-margin" (click)="selectedMode !== 'login'? onRegister() : onLogin()" [nzType]="'primary'">{{selectedMode == "login"? "Login" : "Register"}}</button> Or <a (click)="changeMode()"> {{ selectedMode == "login"? "Register now!" :  "Login" }} </a>
+            </form>
+        </div>
+    </div>
+
+</div>
